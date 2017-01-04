@@ -1,9 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.paresh.exodia.ContactUs"
-    android:background="#4e4c4d">
+    android:background="#fff">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -21,17 +22,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/conveyor"
-                android:textColor="#fff"
+                android:textColor="#333"
                 android:textSize="17dp"
                 android:gravity="center"
                 android:layout_marginTop="10dp"/>
 
             //kislaya
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_kislaya"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -83,23 +92,31 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //spon
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/spon"
-                android:textColor="#fff"
+                android:textColor="#333"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
 
             //Aditya Sharma
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_aditya"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -151,13 +168,21 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
             //Abhishek Tiwari
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_abhishek"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -209,23 +234,31 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //publicity
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pub"
-                android:textColor="#fff"
+                android:textColor="#333"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
 
             //Atul
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_atul"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -277,13 +310,20 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //mukesh
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_mukesh"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -335,13 +375,20 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //anuksha
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_anuksha"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -393,23 +440,31 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //media
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/media"
-                android:textColor="#fff"
+                android:textColor="#333"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
 
             //Rahul
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_rahul"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -461,13 +516,20 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
             //pulkit
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
             <RelativeLayout
                 android:id="@+id/item_linear_layout_pulkit"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_rect">
 
@@ -519,7 +581,7 @@
                     android:src="@drawable/ic_call_black_18dp" />
 
             </RelativeLayout>
-
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

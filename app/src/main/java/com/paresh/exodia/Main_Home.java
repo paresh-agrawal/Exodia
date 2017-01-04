@@ -45,6 +45,7 @@ public class Main_Home extends AppCompatActivity
         public static String val;
         private NotificationCompat.Builder mBuilder,mBuilder1;
         private String NotificationString;
+        public DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class Main_Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         displayView(R.id.content_frame);
+
         NotificationFirebase();
 
     }
@@ -163,7 +165,7 @@ public class Main_Home extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
@@ -239,19 +241,17 @@ public class Main_Home extends AppCompatActivity
             displayView(R.id.nav_events);
         } else if (id == R.id.nav_schedule) {
 
-        } else if (id == R.id.nav_favorite) {
-
         } else if (id == R.id.nav_directions) {
             startActivity(new Intent(Main_Home.this,Map_activity.class));
             return true;
-        } else if (id == R.id.nav_register) {
-
         } else if (id == R.id.nav_app_credits) {
 
         } else if (id == R.id.nav_contact_us) {
             displayView(R.id.nav_contact_us);
         } else if (id == R.id.nav_sponsors) {
             displayView(R.id.nav_sponsors);
+        } else if (id == R.id.nav_about_us) {
+
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -269,7 +269,7 @@ public class Main_Home extends AppCompatActivity
 
         switch (viewId) {
             case R.id.nav_contact_us:
-                fragment = new ContactUs();
+                fragment = new Contact_Us();
                 viewIsAtHome = true;
                 title  = "Contacts";
                 break;

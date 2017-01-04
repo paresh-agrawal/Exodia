@@ -19,4 +19,7 @@
     <string name="spon"><u><b>Sponsorship Coordinators</b></u></string>
     <string name="pub"><u><b>Publicity Coordinators</b></u></string>
     <string name="media"><u><b>Media Coordinators</b></u></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +56,6 @@ public class Cultural_Events extends Fragment {
                 ft.commit();
             }
         });return events;
-
     }
     @Override
     public void onResume() {
@@ -70,7 +71,12 @@ public class Cultural_Events extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
                     Fragment fragment = new Events();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.content_frame,fragment);

@@ -14,17 +14,16 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactUs extends Fragment {
+public class Contact_Us extends Fragment {
 
 
-    public ContactUs() {
+    public Contact_Us() {
         // Required empty public constructor
     }
 
@@ -118,7 +117,12 @@ public class ContactUs extends Fragment {
         getView().setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
                     Fragment fragment = new Home();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.content_frame,fragment);

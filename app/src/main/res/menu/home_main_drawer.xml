@@ -15,17 +15,9 @@
             android:icon="@drawable/ic_menu_schedule"
             android:title="Schedule"/>
         <item
-            android:id="@+id/nav_favorite"
-            android:icon="@drawable/ic_menu_favorite"
-            android:title="Favorite"/>
-        <item
             android:id="@+id/nav_directions"
             android:icon="@drawable/ic_menu_directions"
             android:title="Campus Map"/>
-        <item
-            android:id="@+id/nav_register"
-            android:icon="@drawable/ic_menu_register"
-            android:title="Register"/>
         <item
             android:id="@+id/nav_app_credits"
             android:icon="@drawable/ic__menu_app_credits"
@@ -38,6 +30,10 @@
             android:id="@+id/nav_sponsors"
             android:icon="@drawable/ic_menu_sponsers"
             android:title="Sponsors"/>
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_error_outline_black_24dp"
+            android:title="About Us"/>
     </group>
 
     <item android:title="Communicate">
