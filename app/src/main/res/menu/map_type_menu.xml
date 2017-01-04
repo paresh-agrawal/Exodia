@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.admin.mapfinalfinal.MainActivity">
+
+    <item
+        android:id="@+id/action_campus_view"
+        android:icon="@drawable/ic_menu_directions_white"
+        android:title="Campus"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/mapTpyeNormal"
+        android:title="@string/map_type_normal"
+        android:orderInCategory="100"
+        android:icon="@color/grey"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mapTpyeTerrain"
+        android:title="@string/map_type_terrain"
+        android:orderInCategory="100"
+        android:icon="@color/grey"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mapTpyeSatellite"
+        android:title="@string/map_type_satellite"
+        android:orderInCategory="100"
+        android:icon="@color/grey"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mapTpyeHybrid"
+        android:title="@string/map_type_hybrid"
+        android:orderInCategory="100"
+        android:icon="@color/grey"
+        app:showAsAction="never"/>
+
+</menu>

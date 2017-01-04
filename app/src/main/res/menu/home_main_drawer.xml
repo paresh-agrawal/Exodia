@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_menu_events"
+            android:title="Events"/>
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_menu_schedule"
+            android:title="Schedule"/>
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_menu_favorite"
+            android:title="Favorite"/>
+        <item
+            android:id="@+id/nav_directions"
+            android:icon="@drawable/ic_menu_directions"
+            android:title="Campus Map"/>
+        <item
+            android:id="@+id/nav_register"
+            android:icon="@drawable/ic_menu_register"
+            android:title="Register"/>
+        <item
+            android:id="@+id/nav_app_credits"
+            android:icon="@drawable/ic__menu_app_credits"
+            android:title="App Credits"/>
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_menu_contact_us"
+            android:title="Contact Us"/>
+        <item
+            android:id="@+id/nav_sponsors"
+            android:icon="@drawable/ic_menu_sponsers"
+            android:title="Sponsors"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

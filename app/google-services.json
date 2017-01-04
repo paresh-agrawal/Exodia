@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1051340455103",
+    "firebase_url": "https://exodia-1002f.firebaseio.com",
+    "project_id": "exodia-1002f",
+    "storage_bucket": "exodia-1002f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051340455103:android:26a5dbb9c9273703",
+        "android_client_info": {
+          "package_name": "com.paresh.exodia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051340455103-9dg5hqleb7thm9cdl8jcuelvjbjh5h4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paresh.exodia",
+            "certificate_hash": "DCD7172A4786C51338BEEA56E1C24E497582B193"
+          }
+        },
+        {
+          "client_id": "1051340455103-a7qlqkrs0mvkurdr3h4nl0v5qqt3e00n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsq5zsgQgqSkidKC8kwmHPn5B-SlBDnLY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051340455103-a7qlqkrs0mvkurdr3h4nl0v5qqt3e00n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

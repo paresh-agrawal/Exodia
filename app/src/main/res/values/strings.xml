@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Exodia</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="schedule">Schedule</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="map_type_none">None</string>
+    <string name="map_type_normal">Normal</string>
+    <string name="map_type_terrain">Terrain</string>
+    <string name="map_type_satellite">Satellite</string>
+    <string name="map_type_hybrid">Hybrid</string>
+    <string name="campus_map"><b>       Campus Map</b></string>
+    <string name="contact_us"><b>       Contact Us</b></string>
+    <string name="sponsors"><b>       Sponsors</b></string>
+    <string name="events"><b>       Events</b></string>
+    <string name="conveyor"><u><b>The Convener</b></u></string>
+    <string name="spon"><u><b>Sponsorship Coordinators</b></u></string>
+    <string name="pub"><u><b>Publicity Coordinators</b></u></string>
+    <string name="media"><u><b>Media Coordinators</b></u></string>
+</resources>
