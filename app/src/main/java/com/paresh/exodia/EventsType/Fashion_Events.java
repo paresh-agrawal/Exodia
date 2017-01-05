@@ -1,9 +1,8 @@
-package com.paresh.exodia;
+package com.paresh.exodia.EventsType;
 
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -16,30 +15,37 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
-import com.paresh.exodia.EventsType.Cultural_Events;
-import com.paresh.exodia.EventsType.Fashion_Events;
-
+import com.paresh.exodia.CulturalEvents.BandSlam;
+import com.paresh.exodia.CulturalEvents.BigStink;
+import com.paresh.exodia.CulturalEvents.Canvas;
+import com.paresh.exodia.CulturalEvents.ExodiaIdol;
+import com.paresh.exodia.CulturalEvents.GrooveFanatics;
+import com.paresh.exodia.CulturalEvents.Synchronians;
+import com.paresh.exodia.Events;
+import com.paresh.exodia.FashionEvents.Couture;
+import com.paresh.exodia.FashionEvents.MrMrsExodia;
+import com.paresh.exodia.Main_Home;
+import com.paresh.exodia.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Events extends Fragment {
+public class Fashion_Events extends Fragment {
 
+    private ImageButton coutureib,mrMrsExodia;
 
-    private ImageButton cultiv,fashioniv;
-
-    public Events() {
+    public Fashion_Events() {
         // Required empty public constructor
     }
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
 
@@ -47,53 +53,54 @@ public class Events extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View events = inflater.inflate(R.layout.fragment_events, container, false);
+        View fashion_events = inflater.inflate(R.layout.fragment_fashion__events, container, false);
         ((Main_Home) getActivity())
-                .setActionBarTitle("Events");
-
-        cultiv = (ImageButton) events.findViewById(R.id.event_cultib);
-        fashioniv = (ImageButton)events.findViewById(R.id.event_fash);
+                .setActionBarTitle("Cultural Events");
+        coutureib = (ImageButton)fashion_events.findViewById(R.id.event_fashion_couture);
+        mrMrsExodia =(ImageButton)fashion_events.findViewById(R.id.event_fashion_MrMrsExodia);
 
         animation();
-        openEvents();
-        return events;
+        open_events();
+
+        return fashion_events;
+    }
+
+    private void open_events() {
+        coutureib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Couture();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
+        mrMrsExodia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Couture();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
     }
 
     private void animation() {
         Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out);
         Animation pop_out_1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+        Animation pop_out_2 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_2);
+        Animation pop_out_3 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_3);
 
-        cultiv.setAnimation(pop_out);
-        fashioniv.setAnimation(pop_out_1);
+        coutureib.setAnimation(pop_out);
+        mrMrsExodia.setAnimation(pop_out_1);
     }
 
-    private void openEvents() {
-        cultiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new Cultural_Events();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
-            }
-        });
-        fashioniv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new Fashion_Events();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
-            }
-        });
-    }
-
-    //onBackKeyPress
     @Override
     public void onResume() {
         super.onResume();
 
-        if (getView() == null) {
+        if(getView() == null){
             return;
         }
 
@@ -108,19 +115,17 @@ public class Events extends Fragment {
                     drawer.closeDrawer(GravityCompat.START);
                     return true;
                 }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                    Fragment fragment = new Home();
+                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    Fragment fragment = new Events();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame, fragment);
+                    ft.replace(R.id.content_frame,fragment);
                     ft.commit();
                     return true;
                 }
                 return false;
             }
         });
-
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();

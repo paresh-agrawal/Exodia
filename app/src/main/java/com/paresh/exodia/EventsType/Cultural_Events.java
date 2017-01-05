@@ -1,4 +1,4 @@
-package com.paresh.exodia;
+package com.paresh.exodia.EventsType;
 
 
 import android.app.Activity;
@@ -21,6 +21,9 @@ import com.paresh.exodia.CulturalEvents.Canvas;
 import com.paresh.exodia.CulturalEvents.ExodiaIdol;
 import com.paresh.exodia.CulturalEvents.GrooveFanatics;
 import com.paresh.exodia.CulturalEvents.Synchronians;
+import com.paresh.exodia.Events;
+import com.paresh.exodia.Main_Home;
+import com.paresh.exodia.R;
 
 
 /**
@@ -28,15 +31,11 @@ import com.paresh.exodia.CulturalEvents.Synchronians;
  */
 public class Cultural_Events extends Fragment {
 
-    boolean click = false;
-    View cult_events;
     private ImageButton canvasib,bStinkib, eIdolib,syncib,gFanaticsib,bSlamib;
-
 
     public Cultural_Events() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onAttach(Activity activity) {
@@ -53,20 +52,20 @@ public class Cultural_Events extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View events = inflater.inflate(R.layout.fragment_cultural__events, container, false);
+        View cult_events = inflater.inflate(R.layout.fragment_cultural__events, container, false);
         ((Main_Home) getActivity())
                 .setActionBarTitle("Cultural Events");
-        canvasib = (ImageButton) events.findViewById(R.id.event_cult_canvas);
-        bStinkib = (ImageButton) events.findViewById(R.id.event_cult_bigStink);
-        eIdolib = (ImageButton) events.findViewById(R.id.event_cult_exodiaIdol);
-        syncib = (ImageButton) events.findViewById(R.id.event_cult_synchronians);
-        gFanaticsib = (ImageButton) events.findViewById(R.id.event_cult_grooveFanatics);
-        bSlamib = (ImageButton) events.findViewById(R.id.event_cult_bandSlam);
+        canvasib = (ImageButton) cult_events.findViewById(R.id.event_cult_canvas);
+        bStinkib = (ImageButton) cult_events.findViewById(R.id.event_cult_bigStink);
+        eIdolib = (ImageButton) cult_events.findViewById(R.id.event_cult_exodiaIdol);
+        syncib = (ImageButton) cult_events.findViewById(R.id.event_cult_synchronians);
+        gFanaticsib = (ImageButton) cult_events.findViewById(R.id.event_cult_grooveFanatics);
+        bSlamib = (ImageButton) cult_events.findViewById(R.id.event_cult_bandSlam);
 
         animation();
         open_events();
 
-        return events;
+        return cult_events;
     }
 
     private void open_events() {
