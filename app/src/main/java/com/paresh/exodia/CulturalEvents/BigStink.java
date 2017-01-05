@@ -31,7 +31,6 @@ import com.paresh.exodia.R;
  */
 public class BigStink extends Fragment {
 
-
     private Firebase myFirebaseRef;
     public String value,value_taken;
     private TextView round1,call_bigStink_kisna;

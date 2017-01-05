@@ -15,8 +15,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
+import com.paresh.exodia.CulturalEvents.BandSlam;
 import com.paresh.exodia.CulturalEvents.BigStink;
 import com.paresh.exodia.CulturalEvents.Canvas;
+import com.paresh.exodia.CulturalEvents.ExodiaIdol;
+import com.paresh.exodia.CulturalEvents.GrooveFanatics;
+import com.paresh.exodia.CulturalEvents.Synchronians;
 
 
 /**
@@ -26,7 +30,7 @@ public class Cultural_Events extends Fragment {
 
     boolean click = false;
     View cult_events;
-    private ImageButton canvasib,bStinkib,bSlamib,syncib;
+    private ImageButton canvasib,bStinkib, eIdolib,syncib,gFanaticsib,bSlamib;
 
 
     public Cultural_Events() {
@@ -54,11 +58,18 @@ public class Cultural_Events extends Fragment {
                 .setActionBarTitle("Cultural Events");
         canvasib = (ImageButton) events.findViewById(R.id.event_cult_canvas);
         bStinkib = (ImageButton) events.findViewById(R.id.event_cult_bigStink);
-        bSlamib = (ImageButton) events.findViewById(R.id.event_cult_exodiaIdol);
+        eIdolib = (ImageButton) events.findViewById(R.id.event_cult_exodiaIdol);
         syncib = (ImageButton) events.findViewById(R.id.event_cult_synchronians);
+        gFanaticsib = (ImageButton) events.findViewById(R.id.event_cult_grooveFanatics);
+        bSlamib = (ImageButton) events.findViewById(R.id.event_cult_bandSlam);
 
         animation();
+        open_events();
 
+        return events;
+    }
+
+    private void open_events() {
         canvasib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +88,42 @@ public class Cultural_Events extends Fragment {
                 ft.commit();
             }
         });
-        return events;
+        eIdolib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new ExodiaIdol();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
+        syncib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Synchronians();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
+        gFanaticsib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new GrooveFanatics();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
+        bSlamib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new BandSlam();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
     }
 
     private void animation() {
@@ -88,7 +134,7 @@ public class Cultural_Events extends Fragment {
 
         canvasib.setAnimation(pop_out);
         bStinkib.setAnimation(pop_out_1);
-        bSlamib.setAnimation(pop_out_2);
+        eIdolib.setAnimation(pop_out_2);
         syncib.setAnimation(pop_out_3);
     }
 

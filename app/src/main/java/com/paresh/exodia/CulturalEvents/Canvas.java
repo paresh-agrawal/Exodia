@@ -31,6 +31,7 @@ import com.paresh.exodia.R;
  * A simple {@link Fragment} subclass.
  */
 public class Canvas extends Fragment {
+
     private Firebase myFirebaseRef;
     public String value,value_taken;
     private TextView round1,call_canvas_vishnu,call_canvas_abhijeet;
@@ -42,7 +43,6 @@ public class Canvas extends Fragment {
     public Canvas() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

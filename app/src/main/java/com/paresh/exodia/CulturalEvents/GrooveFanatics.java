@@ -29,54 +29,61 @@ import com.paresh.exodia.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExodiaIdol extends Fragment {
+public class GrooveFanatics extends Fragment {
 
     private Firebase myFirebaseRef;
     public String value,value_taken;
-    private TextView round1, call_exodiaIdol_simranjeet;
+    private TextView round1,call_grooveFanatics_vedant,call_grooveFanatics_mamta;
     private SharedPreferences sharedprefs, shared;
     private SharedPreferences.Editor editor;
     private DatabaseReference mDatabase;
     private CardView schedule,prize,description,contacts;
 
-    public ExodiaIdol() {
+    public GrooveFanatics() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View ExodiaIdol = inflater.inflate(R.layout.fragment_exodia_idol, container, false);
+        final View GrooveFanatics = inflater.inflate(R.layout.fragment_groove_fanatics, container, false);
 
-        ((Main_Home) getActivity()).setActionBarTitle("Exodia Idol");
+        ((Main_Home) getActivity()).setActionBarTitle("Groove Fanatics");
 
-        schedule = (CardView)ExodiaIdol.findViewById(R.id.schedule);
-        prize = (CardView)ExodiaIdol.findViewById(R.id.prize);
-        description = (CardView)ExodiaIdol.findViewById(R.id.description);
-        contacts = (CardView)ExodiaIdol.findViewById(R.id.contacts);
-        call_exodiaIdol_simranjeet =(TextView)ExodiaIdol.findViewById(R.id.call_ExodiaIdol_simranjeet);
-        round1 = (TextView)ExodiaIdol.findViewById(R.id.ExodiaIdol_round1_schedule_tv);
+        schedule = (CardView)GrooveFanatics.findViewById(R.id.schedule);
+        prize = (CardView)GrooveFanatics.findViewById(R.id.prize);
+        description = (CardView)GrooveFanatics.findViewById(R.id.description);
+        contacts = (CardView)GrooveFanatics.findViewById(R.id.contacts);
+        call_grooveFanatics_mamta=(TextView)GrooveFanatics.findViewById(R.id.call_grooveFanatics_mamta);
+        call_grooveFanatics_vedant=(TextView)GrooveFanatics.findViewById(R.id.call_grooveFanatics_vedant);
+        round1 = (TextView)GrooveFanatics.findViewById(R.id.grooveFanatics_round1_schedule_tv);
 
         loadSchedule();
         call();
         animation();
         getDataFromServer();
 
-        return ExodiaIdol;
+        return GrooveFanatics;
     }
+
     private void call() {
-        call_exodiaIdol_simranjeet.setOnClickListener(new View.OnClickListener() {
+        call_grooveFanatics_mamta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+911234567890")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919234567385")));
+            }
+        });
+        call_grooveFanatics_vedant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919234567385")));
             }
         });
     }
 
     private void loadSchedule() {
-        myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Schdule/CulturalEvents/ExodiaIdol");
+        myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Schdule/CulturalEvents/GrooveFanatics");
         getDataFromServer();
     }
 

@@ -29,17 +29,17 @@ import com.paresh.exodia.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExodiaIdol extends Fragment {
+public class BandSlam extends Fragment {
 
     private Firebase myFirebaseRef;
     public String value,value_taken;
-    private TextView round1, call_exodiaIdol_simranjeet;
+    private TextView round1,call_bandSlam_shreyak;
     private SharedPreferences sharedprefs, shared;
     private SharedPreferences.Editor editor;
     private DatabaseReference mDatabase;
     private CardView schedule,prize,description,contacts;
 
-    public ExodiaIdol() {
+    public BandSlam() {
         // Required empty public constructor
     }
 
@@ -48,26 +48,26 @@ public class ExodiaIdol extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View ExodiaIdol = inflater.inflate(R.layout.fragment_exodia_idol, container, false);
+        final View BandSlam = inflater.inflate(R.layout.fragment_band_slam, container, false);
 
-        ((Main_Home) getActivity()).setActionBarTitle("Exodia Idol");
+        ((Main_Home) getActivity()).setActionBarTitle("Band Slam");
 
-        schedule = (CardView)ExodiaIdol.findViewById(R.id.schedule);
-        prize = (CardView)ExodiaIdol.findViewById(R.id.prize);
-        description = (CardView)ExodiaIdol.findViewById(R.id.description);
-        contacts = (CardView)ExodiaIdol.findViewById(R.id.contacts);
-        call_exodiaIdol_simranjeet =(TextView)ExodiaIdol.findViewById(R.id.call_ExodiaIdol_simranjeet);
-        round1 = (TextView)ExodiaIdol.findViewById(R.id.ExodiaIdol_round1_schedule_tv);
+        schedule = (CardView)BandSlam.findViewById(R.id.schedule);
+        prize = (CardView)BandSlam.findViewById(R.id.prize);
+        description = (CardView)BandSlam.findViewById(R.id.description);
+        contacts = (CardView)BandSlam.findViewById(R.id.contacts);
+        call_bandSlam_shreyak=(TextView)BandSlam.findViewById(R.id.call_bandSlam_shreyak);
+        round1 = (TextView)BandSlam.findViewById(R.id.bandSlam_round1_schedule_tv);
 
         loadSchedule();
         call();
         animation();
         getDataFromServer();
 
-        return ExodiaIdol;
+        return BandSlam;
     }
     private void call() {
-        call_exodiaIdol_simranjeet.setOnClickListener(new View.OnClickListener() {
+        call_bandSlam_shreyak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+911234567890")));
@@ -76,7 +76,7 @@ public class ExodiaIdol extends Fragment {
     }
 
     private void loadSchedule() {
-        myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Schdule/CulturalEvents/ExodiaIdol");
+        myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Schdule/CulturalEvents/BandSlam");
         getDataFromServer();
     }
 
