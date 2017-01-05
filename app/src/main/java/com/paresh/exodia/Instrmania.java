@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +19,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,6 +44,7 @@ public class Instrmania extends Fragment {
     private SharedPreferences sharedprefs, shared;
     private SharedPreferences.Editor editor;
     private DatabaseReference mDatabase;
+    private CardView schedule,prize,description,contacts;
 
     public Instrmania() {
         // Required empty public constructor
@@ -63,13 +67,32 @@ public class Instrmania extends Fragment {
             }
         });
 
-
         round1 = (TextView)event.findViewById(R.id.instrumania_round1_schedule_tv);
 
         myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/schedule");
+
+        schedule = (CardView)event.findViewById(R.id.schedule);
+        prize = (CardView)event.findViewById(R.id.prize);
+        description = (CardView)event.findViewById(R.id.description);
+        contacts = (CardView)event.findViewById(R.id.contacts);
+        animation();
         getDataFromServer();
+
         return event;
     }
+
+    private void animation() {
+        Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out);
+        Animation pop_out_1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+        Animation pop_out_2 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_2);
+        Animation pop_out_3 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_3);
+
+        schedule.setAnimation(pop_out);
+        prize.setAnimation(pop_out_1);
+        description.setAnimation(pop_out_2);
+        contacts.setAnimation(pop_out_3);
+    }
+
     private void getDataFromServer() {
         myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
             @Override
