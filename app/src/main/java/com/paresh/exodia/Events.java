@@ -12,6 +12,12 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
 
 
@@ -23,6 +29,7 @@ public class Events extends Fragment {
 
     boolean click = false;
     View cult_events;
+    private Animation fadeIn;
 
     public Events() {
         // Required empty public constructor
@@ -35,6 +42,7 @@ public class Events extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
 
@@ -46,8 +54,17 @@ public class Events extends Fragment {
         ((Main_Home) getActivity())
                 .setActionBarTitle("Events");
 
+
+
         //If cultural events button is clicked
         ImageButton cultiv = (ImageButton) events.findViewById(R.id.event_cultib);
+        ImageButton fashioniv = (ImageButton)events.findViewById(R.id.event_fash);
+
+        Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out);
+        Animation pop_out_1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+
+        cultiv.setAnimation(pop_out);
+        fashioniv.setAnimation(pop_out_1);
         cultiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

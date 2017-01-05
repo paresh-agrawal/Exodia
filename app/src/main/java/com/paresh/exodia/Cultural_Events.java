@@ -11,6 +11,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 
@@ -21,6 +23,7 @@ public class Cultural_Events extends Fragment {
 
     boolean click = false;
     View cult_events;
+    private ImageButton instib,bStinkib,bSlamib,syncib;
 
 
     public Cultural_Events() {
@@ -46,7 +49,13 @@ public class Cultural_Events extends Fragment {
         View events = inflater.inflate(R.layout.fragment_cultural__events, container, false);
         ((Main_Home) getActivity())
                 .setActionBarTitle("Cultural Events");
-        ImageButton instib = (ImageButton) events.findViewById(R.id.event_cult_instrumania);
+        instib = (ImageButton) events.findViewById(R.id.event_cult_instrumania);
+        bStinkib = (ImageButton) events.findViewById(R.id.event_cult_bigStink);
+        bSlamib = (ImageButton) events.findViewById(R.id.event_cult_exodiaIdol);
+        syncib = (ImageButton) events.findViewById(R.id.event_cult_synchronians);
+
+        animation();
+
         instib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +66,19 @@ public class Cultural_Events extends Fragment {
             }
         });return events;
     }
+
+    private void animation() {
+        Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out);
+        Animation pop_out_1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+        Animation pop_out_2 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_2);
+        Animation pop_out_3 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_3);
+
+        instib.setAnimation(pop_out);
+        bStinkib.setAnimation(pop_out_1);
+        bSlamib.setAnimation(pop_out_2);
+        syncib.setAnimation(pop_out_3);
+    }
+
     @Override
     public void onResume() {
         super.onResume();

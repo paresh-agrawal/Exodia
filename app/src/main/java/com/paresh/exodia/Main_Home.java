@@ -11,18 +11,28 @@ import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,17 +45,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import static com.paresh.exodia.R.drawable.notification_logo1;
 
 public class Main_Home extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-        private NavigationView navigationView;
-        private boolean viewIsAtHome;
-        private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
-        private long mBackPressed;
-        private Firebase myFirebaseRef;
-        public static String val;
-        private NotificationCompat.Builder mBuilder,mBuilder1;
-        private String NotificationString;
-        public DrawerLayout drawer;
+    private NavigationView navigationView;
+    private boolean viewIsAtHome;
+    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+    private long mBackPressed;
+    private Firebase myFirebaseRef;
+    public static String val;
+    private NotificationCompat.Builder mBuilder, mBuilder1;
+    private String NotificationString;
+    public DrawerLayout drawer;
+    public TabLayout tabLayout;
+    private int a;
+    public AlphaAnimation fadeIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +79,7 @@ public class Main_Home extends AppCompatActivity
         displayView(R.id.content_frame);
 
         NotificationFirebase();
+        //ViewPager and TabLayout
 
     }
 
@@ -84,6 +98,7 @@ public class Main_Home extends AppCompatActivity
         getNotification();
     }
 
+
     private void getNotification() {
         //Notification 1
         myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Value");
@@ -92,16 +107,17 @@ public class Main_Home extends AppCompatActivity
             public void onDataChange(com.firebase.client.DataSnapshot data) {
 
                 System.out.println(data.getValue());
-                val = (String)data.getValue();
-                Log.d("def",val);
-                if(val.equals("yes1")){
+                val = (String) data.getValue();
+                Log.d("def", val);
+                if (val.equals("yes1")) {
                     myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag/NotificationDetail");
                     myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
                         @Override
                         public void onDataChange(com.firebase.client.DataSnapshot notification) {
                             System.out.println(notification.getValue());
-                            mBuilder.setContentText((String)notification.getValue());
+                            mBuilder.setContentText((String) notification.getValue());
                         }
+
                         @Override
                         public void onCancelled(FirebaseError firebaseError) {
                         }
@@ -111,22 +127,23 @@ public class Main_Home extends AppCompatActivity
                         @Override
                         public void onDataChange(com.firebase.client.DataSnapshot notification) {
                             System.out.println(notification.getValue());
-                            mBuilder.setContentTitle((String)notification.getValue());
+                            mBuilder.setContentTitle((String) notification.getValue());
                         }
+
                         @Override
                         public void onCancelled(FirebaseError firebaseError) {
                         }
                     });
                     buildNotification(1);
-                }
-                else if(val.equals("yes2")){
+                } else if (val.equals("yes2")) {
                     myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag1/NotificationDetail");
                     myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
                         @Override
                         public void onDataChange(com.firebase.client.DataSnapshot notification) {
                             System.out.println(notification.getValue());
-                            mBuilder1.setContentText((String)notification.getValue());
+                            mBuilder1.setContentText((String) notification.getValue());
                         }
+
                         @Override
                         public void onCancelled(FirebaseError firebaseError) {
                         }
@@ -136,8 +153,9 @@ public class Main_Home extends AppCompatActivity
                         @Override
                         public void onDataChange(com.firebase.client.DataSnapshot notification) {
                             System.out.println(notification.getValue());
-                            mBuilder1.setContentTitle((String)notification.getValue());
+                            mBuilder1.setContentTitle((String) notification.getValue());
                         }
+
                         @Override
                         public void onCancelled(FirebaseError firebaseError) {
                         }
@@ -153,11 +171,10 @@ public class Main_Home extends AppCompatActivity
     }
 
     private void buildNotification(int i) {
-        if(i==1) {
+        if (i == 1) {
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(1, mBuilder.build());
-        }
-        else if(i==2){
+        } else if (i == 2) {
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(1, mBuilder1.build());
         }
@@ -168,40 +185,39 @@ public class Main_Home extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else if (!viewIsAtHome) { //if the current view is not the News fragment
-                displayView(R.id.content_frame); //display the News fragment
-                //Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
-                final Toast toast = Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_SHORT);
-                toast.show();
+        } else if (!viewIsAtHome) { //if the current view is not the News fragment
+            displayView(R.id.content_frame); //display the News fragment
+            //Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+            final Toast toast = Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            toast.show();
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        toast.cancel();
-                    }
-                }, 500);
-                if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
-                {
-                    finish();}
-                mBackPressed = System.currentTimeMillis();//If view is in Home fragment, exit application
-        }else {
-                //Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
-                final Toast toast = Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_SHORT);
-                toast.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    toast.cancel();
+                }
+            }, 500);
+            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+                finish();
+            }
+            mBackPressed = System.currentTimeMillis();//If view is in Home fragment, exit application
+        } else {
+            //Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+            final Toast toast = Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            toast.show();
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        toast.cancel();
-                    }
-                }, 500);
-                if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
-                {
-                    finish();}
-                mBackPressed = System.currentTimeMillis();//If view is in Home fragment, exit application
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    toast.cancel();
+                }
+            }, 500);
+            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+                finish();
+            }
+            mBackPressed = System.currentTimeMillis();//If view is in Home fragment, exit application
 
         }
     }
@@ -222,8 +238,7 @@ public class Main_Home extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }
-        else if (id == R.id.action_exit){
+        } else if (id == R.id.action_exit) {
             finish();
         }
         return super.onOptionsItemSelected(item);
@@ -242,7 +257,7 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_directions) {
-            startActivity(new Intent(Main_Home.this,Map_activity.class));
+            startActivity(new Intent(Main_Home.this, Map_activity.class));
             return true;
         } else if (id == R.id.nav_app_credits) {
 
@@ -251,7 +266,7 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_sponsors) {
             displayView(R.id.nav_sponsors);
         } else if (id == R.id.nav_about_us) {
-
+            displayView(R.id.nav_about_us);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -271,30 +286,37 @@ public class Main_Home extends AppCompatActivity
             case R.id.nav_contact_us:
                 fragment = new Contact_Us();
                 viewIsAtHome = true;
-                title  = "Contacts";
+                title = "Contacts";
                 break;
 
             case R.id.nav_sponsors:
                 fragment = new Sponsors();
                 viewIsAtHome = true;
-                title  = "Sponsors";
+                title = "Sponsors";
                 break;
 
             case R.id.nav_events:
                 fragment = new Events();
                 viewIsAtHome = true;
-                title  = "Events";
+                title = "Events";
                 break;
 
             case R.id.nav_home:
                 fragment = new Home();
                 viewIsAtHome = true;
-                title  = "Exodia";
+                title = "Exodia";
+                break;
+            case R.id.nav_about_us:
+                fragment = new About_Us();
+                viewIsAtHome = true;
+                title = "About Us";
                 break;
         }
 
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.anim.fade_in,
+                    R.anim.fade_out);
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
         }
