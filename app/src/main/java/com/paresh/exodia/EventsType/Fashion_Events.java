@@ -78,7 +78,7 @@ public class Fashion_Events extends Fragment {
         mrMrsExodia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Couture();
+                Fragment fragment = new MrMrsExodia();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
