@@ -20,6 +20,11 @@
     <string name="pub"><u><b>Publicity Coordinators</b></u></string>
     <string name="media"><u><b>Media Coordinators</b></u></string>
 
+    //Events Call No.
+    <string name="canvas_abhijeet"><u>1234567890</u></string>
+    <string name="canvas_vishnu"><u>1234567890</u></string>
+    <string name="bigStink_kisna"><u>1234567890</u></string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

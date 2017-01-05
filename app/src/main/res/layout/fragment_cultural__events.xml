@@ -28,8 +28,8 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:id="@+id/event_cult_instrumania"
-                    android:background="@drawable/instrumania1"/>
+                    android:id="@+id/event_cult_canvas"
+                    android:background="@drawable/canvas"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:id="@+id/event_cult_bigStink"
