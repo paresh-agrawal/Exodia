@@ -63,7 +63,6 @@ public class Couture extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return Couture;
     }

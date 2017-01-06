@@ -62,7 +62,6 @@ public class BandSlam extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return BandSlam;
     }

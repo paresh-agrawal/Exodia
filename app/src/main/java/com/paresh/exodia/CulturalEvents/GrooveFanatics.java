@@ -62,7 +62,6 @@ public class GrooveFanatics extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return GrooveFanatics;
     }

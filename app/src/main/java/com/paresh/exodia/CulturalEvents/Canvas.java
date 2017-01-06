@@ -23,6 +23,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.paresh.exodia.EventsType.Cultural_Events;
+import com.paresh.exodia.EventsType.TechnicalEvents;
 import com.paresh.exodia.Main_Home;
 import com.paresh.exodia.R;
 
@@ -63,7 +64,6 @@ public class Canvas extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return Canvas;
     }

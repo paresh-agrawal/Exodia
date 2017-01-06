@@ -63,7 +63,6 @@ public class MrMrsExodia extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return mrMrsExodia;
     }

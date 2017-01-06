@@ -62,7 +62,6 @@ public class BigStink extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return BigStink;
     }

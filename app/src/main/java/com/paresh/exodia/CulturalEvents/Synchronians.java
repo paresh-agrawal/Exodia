@@ -63,7 +63,6 @@ public class Synchronians extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return Synchronians;
     }

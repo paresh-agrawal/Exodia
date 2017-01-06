@@ -62,7 +62,6 @@ public class ExodiaIdol extends Fragment {
         loadSchedule();
         call();
         animation();
-        getDataFromServer();
 
         return ExodiaIdol;
     }
