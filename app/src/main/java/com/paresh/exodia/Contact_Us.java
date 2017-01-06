@@ -10,11 +10,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.CardView;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 /**
@@ -22,6 +26,8 @@ import android.widget.RelativeLayout;
  */
 public class Contact_Us extends Fragment {
 
+    private CardView cardView_kislaya,cardView_aditya,cardView_abhishek,cardView_atul,cardView_mukesh,cardView_anuksha,cardView_rahul,cardView_pulkit;
+    private TextView textView_convenor,textView_spon,textView_publicity,textView_media;
 
     public Contact_Us() {
         // Required empty public constructor
@@ -46,64 +52,94 @@ public class Contact_Us extends Fragment {
         View contact_us = inflater.inflate(R.layout.fragment_contact_us, container, false);
         ((Main_Home) getActivity())
                 .setActionBarTitle("Contact Us");
-        RelativeLayout ivcall = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_kislaya);
-        ivcall.setOnClickListener(new View.OnClickListener() {
+
+        cardView_kislaya = (CardView) contact_us.findViewById(R.id.cardview_kislaya);
+        cardView_aditya = (CardView) contact_us.findViewById(R.id.cardview_aditya);
+        cardView_abhishek = (CardView) contact_us.findViewById(R.id.cardview_abhishek);
+        cardView_atul = (CardView) contact_us.findViewById(R.id.cardview_atul);
+        cardView_mukesh = (CardView) contact_us.findViewById(R.id.cardview_mukesh);
+        cardView_anuksha = (CardView) contact_us.findViewById(R.id.cardview_anuksha);
+        cardView_rahul = (CardView) contact_us.findViewById(R.id.cardview_rahul);
+        cardView_pulkit = (CardView) contact_us.findViewById(R.id.cardview_pulkit);
+        textView_convenor = (TextView)contact_us.findViewById(R.id.tv_convenor);
+        textView_spon = (TextView)contact_us.findViewById(R.id.tv_spon);
+        textView_publicity = (TextView)contact_us.findViewById(R.id.tv_publicity);
+        textView_media = (TextView)contact_us.findViewById(R.id.tv_media);
+
+        animation();
+        call();
+        return contact_us;
+    }
+
+    private void animation() {
+        Animation pop_out1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+
+        cardView_kislaya.setAnimation(pop_out1);
+        cardView_aditya.setAnimation(pop_out1);
+        cardView_abhishek.setAnimation(pop_out1);
+        cardView_atul.setAnimation(pop_out1);
+        cardView_mukesh.setAnimation(pop_out1);
+        cardView_anuksha.setAnimation(pop_out1);
+        cardView_rahul.setAnimation(pop_out1);
+        cardView_pulkit.setAnimation(pop_out1);
+        textView_convenor.setAnimation(pop_out1);
+        textView_spon.setAnimation(pop_out1);
+        textView_publicity.setAnimation(pop_out1);
+        textView_media.setAnimation(pop_out1);
+    }
+
+    private void call() {
+        cardView_kislaya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015413")));
             }
         });
-        RelativeLayout ivcall1 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_aditya);
-        ivcall1.setOnClickListener(new View.OnClickListener() {
+        cardView_aditya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015395")));
             }
         });
-        RelativeLayout ivcall2 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_abhishek);
-        ivcall2.setOnClickListener(new View.OnClickListener() {
+        cardView_abhishek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015394")));
             }
         });
-        RelativeLayout ivcall3 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_atul);
-        ivcall3.setOnClickListener(new View.OnClickListener() {
+        cardView_atul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015414")));
             }
         });
-        RelativeLayout ivcall4 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_mukesh);
-        ivcall4.setOnClickListener(new View.OnClickListener() {
+        cardView_mukesh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918350939554")));
             }
         });
-        RelativeLayout ivcall5 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_anuksha);
-        ivcall5.setOnClickListener(new View.OnClickListener() {
+        cardView_anuksha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015407")));
             }
         });
-        RelativeLayout ivcall6 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_rahul);
-        ivcall6.setOnClickListener(new View.OnClickListener() {
+        cardView_rahul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918989587883")));
             }
         });
-        RelativeLayout ivcall7 = (RelativeLayout) contact_us.findViewById(R.id.item_linear_layout_pulkit);
-        ivcall7.setOnClickListener(new View.OnClickListener() {
+        cardView_pulkit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919882650863")));
             }
         });
-        return contact_us;
+
     }
+
     @Override
     public void onResume() {
         super.onResume();

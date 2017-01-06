@@ -2,34 +2,22 @@ package com.paresh.exodia;
 
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.CardView;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
-
 import com.github.clans.fab.FloatingActionMenu;
 
 
@@ -65,9 +53,9 @@ public class About_Us extends Fragment {
         ((Main_Home) getActivity())
                 .setActionBarTitle("About Us");
         materialDesignFAM = (FloatingActionMenu) about_us.findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_item1);
-        floatingActionButton2 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_item3);
+        floatingActionButton1 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_fb);
+        floatingActionButton2 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_mail);
+        floatingActionButton3 = (FloatingActionButton) about_us.findViewById(R.id.material_design_floating_action_menu_twitter);
         about_us_exodia = (TextView)about_us.findViewById(R.id.about_us_exodia);
         about_us_exodia_description = (TextView)about_us.findViewById(R.id.about_us_exodia_description);
         about_us_cardview =(CardView)about_us.findViewById(R.id.about_us_cardview);

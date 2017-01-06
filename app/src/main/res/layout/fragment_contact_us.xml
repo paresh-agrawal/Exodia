@@ -22,15 +22,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/conveyor"
+                android:id="@+id/tv_convenor"
                 android:textColor="#ddd"
                 android:textSize="17dp"
                 android:gravity="center"
                 android:layout_marginTop="10dp"/>
-
             //kislaya
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_kislaya"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginTop="8dp"
@@ -93,20 +94,22 @@
 
             </RelativeLayout>
             </android.support.v7.widget.CardView>
+
             //spon
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/spon"
                 android:textColor="#ddd"
+                android:id="@+id/tv_spon"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
             //Aditya Sharma
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_aditya"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginTop="4dp"
@@ -169,11 +172,11 @@
 
             </RelativeLayout>
             </android.support.v7.widget.CardView>
-
             //Abhishek Tiwari
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_abhishek"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginLeft="8dp"
@@ -235,20 +238,22 @@
 
             </RelativeLayout>
             </android.support.v7.widget.CardView>
+
             //publicity
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pub"
+                android:id="@+id/tv_publicity"
                 android:textColor="#ddd"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
             //Atul
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_atul"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginTop="4dp"
@@ -315,6 +320,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_mukesh"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginLeft="8dp"
@@ -380,6 +386,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_anuksha"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginLeft="8dp"
@@ -441,20 +448,22 @@
 
             </RelativeLayout>
             </android.support.v7.widget.CardView>
+
             //media
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/media"
+                android:id="@+id/tv_media"
                 android:textColor="#ddd"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
             //Rahul
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_rahul"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginTop="4dp"
@@ -521,6 +530,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:id="@+id/cardview_pulkit"
                 card_view:cardElevation="4dp"
                 card_view:cardCornerRadius="5dp"
                 android:layout_marginLeft="8dp"

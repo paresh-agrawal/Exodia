@@ -96,7 +96,7 @@
                 fab:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/material_design_floating_action_menu_item1"
+                    android:id="@+id/material_design_floating_action_menu_fb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_chevron_left_black_24dp"
@@ -106,7 +106,7 @@
                     fab:fab_size="normal" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/material_design_floating_action_menu_item2"
+                    android:id="@+id/material_design_floating_action_menu_mail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_chevron_left_black_24dp"
@@ -116,7 +116,7 @@
                     fab:fab_size="normal" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/material_design_floating_action_menu_item3"
+                    android:id="@+id/material_design_floating_action_menu_twitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_chevron_left_black_24dp"

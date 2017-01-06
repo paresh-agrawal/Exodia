@@ -9,12 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Home extends Fragment {
 
+    FloatingActionMenu materialDesignFAM;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
 
     public Home() {
         // Required empty public constructor
@@ -39,8 +44,35 @@ public class Home extends Fragment {
         View home = inflater.inflate(R.layout.fragment_home, container, false);
         ((Main_Home) getActivity())
                 .setActionBarTitle("Exodia");
+        materialDesignFAM = (FloatingActionMenu) home.findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_fb);
+        floatingActionButton2 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_mail);
+        floatingActionButton3 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_twitter);
+
+        floatingButton();
+
         return home;
     }
+
+    private void floatingButton() {
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu first item clicked
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+            }
+        });
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
