@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 
 import com.paresh.exodia.EventsType.Cultural_Events;
 import com.paresh.exodia.EventsType.Fashion_Events;
+import com.paresh.exodia.EventsType.TechnicalEvents;
 
 
 /**
@@ -26,7 +27,7 @@ import com.paresh.exodia.EventsType.Fashion_Events;
 public class Events extends Fragment {
 
 
-    private ImageButton cultiv,fashioniv;
+    private ImageButton cultiv,fashioniv,techiv;
 
     public Events() {
         // Required empty public constructor
@@ -51,8 +52,9 @@ public class Events extends Fragment {
         ((Main_Home) getActivity())
                 .setActionBarTitle("Events");
 
+        techiv = (ImageButton)events.findViewById(R.id.event_techib);
         cultiv = (ImageButton) events.findViewById(R.id.event_cultib);
-        fashioniv = (ImageButton)events.findViewById(R.id.event_fash);
+        fashioniv = (ImageButton)events.findViewById(R.id.event_fashib);
 
         animation();
         openEvents();
@@ -62,12 +64,23 @@ public class Events extends Fragment {
     private void animation() {
         Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out);
         Animation pop_out_1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
+        Animation pop_out_2 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_2);
 
-        cultiv.setAnimation(pop_out);
-        fashioniv.setAnimation(pop_out_1);
+        techiv.setAnimation(pop_out);
+        cultiv.setAnimation(pop_out_1);
+        fashioniv.setAnimation(pop_out_2);
     }
 
     private void openEvents() {
+        techiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new TechnicalEvents();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame,fragment);
+                ft.commit();
+            }
+        });
         cultiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

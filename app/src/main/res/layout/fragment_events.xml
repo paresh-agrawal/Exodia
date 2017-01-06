@@ -19,14 +19,23 @@
             android:id="@+id/eventrl"
             android:orientation="vertical">
 
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:id="@+id/event_techib"
+                android:elevation="4dp"
+                android:background="@drawable/event_technical"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
+                    android:layout_marginTop="8dp"
                     android:id="@+id/event_cultib"
+                    android:elevation="4dp"
                     android:background="@drawable/event_cultural"/>
                 <ImageButton
                     android:layout_width="match_parent"
-                    android:id="@+id/event_fash"
+                    android:id="@+id/event_fashib"
+                    android:elevation="4dp"
                     android:layout_height="180dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/event_fashion"/>

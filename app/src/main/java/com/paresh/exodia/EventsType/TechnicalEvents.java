@@ -15,25 +15,26 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
-import com.paresh.exodia.CulturalEvents.BandSlam;
-import com.paresh.exodia.CulturalEvents.BigStink;
-import com.paresh.exodia.CulturalEvents.Canvas;
-import com.paresh.exodia.CulturalEvents.ExodiaIdol;
-import com.paresh.exodia.CulturalEvents.GrooveFanatics;
-import com.paresh.exodia.CulturalEvents.Synchronians;
+
 import com.paresh.exodia.Events;
 import com.paresh.exodia.Main_Home;
 import com.paresh.exodia.R;
-
+import com.paresh.exodia.TechnicalEvents.Iot;
+import com.paresh.exodia.TechnicalEvents.JunkyardWars;
+import com.paresh.exodia.TechnicalEvents.LaserTag;
+import com.paresh.exodia.TechnicalEvents.LineFollower;
+import com.paresh.exodia.TechnicalEvents.Nirman;
+import com.paresh.exodia.TechnicalEvents.RoboWars;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Cultural_Events extends Fragment {
+public class TechnicalEvents extends Fragment {
 
-    private ImageButton canvasib,bStinkib, eIdolib,syncib,gFanaticsib,bSlamib;
 
-    public Cultural_Events() {
+    private ImageButton lineFollowerib, iotib, roboWarsib, junkyardWarsib, laserTagib, nirmanib;
+
+    public TechnicalEvents() {
         // Required empty public constructor
     }
 
@@ -52,72 +53,72 @@ public class Cultural_Events extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View cult_events = inflater.inflate(R.layout.fragment_cultural__events, container, false);
+        View tech_events = inflater.inflate(R.layout.fragment_technical_events, container, false);
         ((Main_Home) getActivity())
-                .setActionBarTitle("Cultural Events");
-        canvasib = (ImageButton) cult_events.findViewById(R.id.event_cult_canvas);
-        bStinkib = (ImageButton) cult_events.findViewById(R.id.event_cult_bigStink);
-        eIdolib = (ImageButton) cult_events.findViewById(R.id.event_cult_exodiaIdol);
-        syncib = (ImageButton) cult_events.findViewById(R.id.event_cult_synchronians);
-        gFanaticsib = (ImageButton) cult_events.findViewById(R.id.event_cult_grooveFanatics);
-        bSlamib = (ImageButton) cult_events.findViewById(R.id.event_cult_bandSlam);
+                .setActionBarTitle("Technical Events");
+        lineFollowerib = (ImageButton) tech_events.findViewById(R.id.event_tech_lineFollower);
+        iotib = (ImageButton) tech_events.findViewById(R.id.event_tech_iot);
+        roboWarsib = (ImageButton) tech_events.findViewById(R.id.event_tech_roboWars);
+        junkyardWarsib = (ImageButton) tech_events.findViewById(R.id.event_tech_junkyardWars);
+        laserTagib = (ImageButton) tech_events.findViewById(R.id.event_tech_laserTag);
+        nirmanib = (ImageButton) tech_events.findViewById(R.id.event_tech_nirman);
 
         animation();
         open_events();
 
-        return cult_events;
+        return tech_events;
     }
 
     private void open_events() {
-        canvasib.setOnClickListener(new View.OnClickListener() {
+        lineFollowerib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Canvas();
+                Fragment fragment = new LineFollower();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
             }
         });
-        bStinkib.setOnClickListener(new View.OnClickListener() {
+        iotib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new BigStink();
+                Fragment fragment = new Iot();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
             }
         });
-        eIdolib.setOnClickListener(new View.OnClickListener() {
+        roboWarsib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new ExodiaIdol();
+                Fragment fragment = new RoboWars();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
             }
         });
-        syncib.setOnClickListener(new View.OnClickListener() {
+        junkyardWarsib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Synchronians();
+                Fragment fragment = new JunkyardWars();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
             }
         });
-        gFanaticsib.setOnClickListener(new View.OnClickListener() {
+        laserTagib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new GrooveFanatics();
+                Fragment fragment = new LaserTag();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
             }
         });
-        bSlamib.setOnClickListener(new View.OnClickListener() {
+        nirmanib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new BandSlam();
+                Fragment fragment = new Nirman();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame,fragment);
                 ft.commit();
@@ -133,12 +134,12 @@ public class Cultural_Events extends Fragment {
         Animation pop_out_4 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_4);
         Animation pop_out_5 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_5);
 
-        canvasib.setAnimation(pop_out);
-        bStinkib.setAnimation(pop_out_1);
-        eIdolib.setAnimation(pop_out_2);
-        syncib.setAnimation(pop_out_3);
-        gFanaticsib.setAnimation(pop_out_4);
-        bSlamib.setAnimation(pop_out_5);
+        lineFollowerib.setAnimation(pop_out);
+        iotib.setAnimation(pop_out_1);
+        roboWarsib.setAnimation(pop_out_2);
+        junkyardWarsib.setAnimation(pop_out_3);
+        laserTagib.setAnimation(pop_out_4);
+        nirmanib.setAnimation(pop_out_5);
     }
 
     @Override

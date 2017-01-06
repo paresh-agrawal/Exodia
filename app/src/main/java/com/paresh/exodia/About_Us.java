@@ -79,8 +79,8 @@ public class About_Us extends Fragment {
     }
 
     private void animate() {
-        Animation pop_out = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
-        about_us_cardview.setAnimation(pop_out);
+        Animation pop_out_up = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_up);
+        about_us_cardview.setAnimation(pop_out_up);
     }
 
     private void changeText() {
