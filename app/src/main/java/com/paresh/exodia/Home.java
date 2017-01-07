@@ -2,12 +2,16 @@ package com.paresh.exodia;
 
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.webkit.WebView;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -41,13 +45,13 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View home = inflater.inflate(R.layout.fragment_home, container, false);
-        ((Main_Home) getActivity())
-                .setActionBarTitle("Exodia");
+        View home = inflater.inflate(R.layout.content_home, container, false);
+        ((Main_Home) getActivity()).setActionBarTitle("Exodia");
         materialDesignFAM = (FloatingActionMenu) home.findViewById(R.id.material_design_android_floating_action_menu);
         floatingActionButton1 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_fb);
         floatingActionButton2 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_mail);
         floatingActionButton3 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_twitter);
+
 
         floatingButton();
 
@@ -58,6 +62,9 @@ public class Home extends Fragment {
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu first item clicked
+                Uri uri = Uri.parse("https://www.facebook.com/Exodia.IITMandi");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
         floatingActionButton2.setOnClickListener(new View.OnClickListener() {
