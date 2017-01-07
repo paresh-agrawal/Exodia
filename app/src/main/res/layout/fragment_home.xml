@@ -71,19 +71,26 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/material_design_floating_action_menu_mail"
+                    android:id="@+id/material_design_floating_action_menu_website"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_gmail"
+                    android:src="@mipmap/ic_website"
                     fab:fab_colorNormal="@color/colorPrimary"
                     fab:fab_colorPressed="#ff6133"
                     fab:fab_size="mini" />
-
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/material_design_floating_action_menu_twitter"
+                    android:id="@+id/material_design_floating_action_menu_instagram"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_twitter"
+                    android:src="@mipmap/ic_instagram"
+                    fab:fab_colorNormal="@color/colorPrimary"
+                    fab:fab_colorPressed="#ff6133"
+                    fab:fab_size="mini" />
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/material_design_floating_action_menu_googlePlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_google_plus"
                     fab:fab_colorNormal="@color/colorPrimary"
                     fab:fab_colorPressed="#ff6133"
                     fab:fab_size="mini" />

@@ -41,7 +41,8 @@
         android:screenOrientation="portrait"
         android:label="Campus Map">
     </activity>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY"
+
+        <meta-data android:name="com.google.android.maps.v2.API_KEY"
         android:value="AIzaSyDWMXQqTTAGtdQyvguX4Hma54f5Q6FahiY"/>
 
     <meta-data android:name="com.google.android.gms.version"

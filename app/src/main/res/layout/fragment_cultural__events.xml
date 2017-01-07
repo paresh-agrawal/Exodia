@@ -7,8 +7,7 @@
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#000">
+        android:layout_height="wrap_content">
         //Main Layout
         <LinearLayout
             android:layout_width="fill_parent"
@@ -17,14 +16,14 @@
             android:paddingLeft="8dp"
             android:paddingTop="8dp"
             android:orientation="vertical"
-            android:background="#4e4c4d">
+            android:background="@color/grey">
             //Event_Cultural
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/event_cultrl1"
                 android:orientation="vertical"
-                android:background="#4e4c4d">
+                android:background="@color/grey">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="180dp"

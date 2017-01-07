@@ -2,6 +2,20 @@
 <resources>
     <color name="colorPrimary">#fe6102</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#fff</color>
     <color name="grey">#4e4d4c</color>
+    <color name="triadic">#026dc2</color>
+    <color name="reddish">#fe0221</color>
+    <color name="apptheme_color">#33b5e5</color>
+    <color name="whitePressed">#d9d9d9</color>
+    <color name="grey_shadow">#dbdbdb</color>
+    <color name="background_color">#C8E6C9</color>
+
+    <!-- For floating action button-->
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="half_black">#808080</color>
+    <color name="pink">#e91e63</color>
+    <color name="light_green_bkg">#C8E6C9</color>
+    <color name="blue">#7733B5E5</color>
+
 </resources>

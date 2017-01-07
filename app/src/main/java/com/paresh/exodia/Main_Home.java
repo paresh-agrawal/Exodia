@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -67,7 +68,7 @@ public class Main_Home extends AppCompatActivity
     public TabLayout tabLayout;
     private int a;
     FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4, floatingActionButton5;
     public AlphaAnimation fadeIn;
 
     @Override
@@ -89,8 +90,11 @@ public class Main_Home extends AppCompatActivity
         displayView(R.id.content_frame);
         materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
         floatingActionButton1 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_fb);
-        floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_mail);
-        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_twitter);
+        floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_website);
+        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_instagram);
+        floatingActionButton4 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_googlePlus);
+        floatingActionButton5 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_twitter);
+
 
         floatingButton();
         NotificationFirebase();
@@ -98,25 +102,45 @@ public class Main_Home extends AppCompatActivity
 
     }
 
-    private void webView() {
-
-    }
     private void floatingButton() {
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu first item clicked
-                webView();
+                Uri uri = Uri.parse("https://www.facebook.com/Exodia.IITMandi");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
         floatingActionButton2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu second item clicked
-
+                Uri uri = Uri.parse("http://exodia.in/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
+                Uri uri = Uri.parse("https://www.instagram.com/exodia.in/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+                Uri uri = Uri.parse("https://plus.google.com/107061928856921334485");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        floatingActionButton5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+                Uri uri = Uri.parse("https://twitter.com/exodia_iitmandi");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
     }
@@ -135,7 +159,6 @@ public class Main_Home extends AppCompatActivity
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         getNotification();
     }
-
 
     private void getNotification() {
         //Notification 1
@@ -293,7 +316,7 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_events) {
             displayView(R.id.nav_events);
         } else if (id == R.id.nav_schedule) {
-
+            displayView(R.id.nav_schedule);
         } else if (id == R.id.nav_directions) {
             startActivity(new Intent(Main_Home.this, Map_activity.class));
             return true;
@@ -346,6 +369,11 @@ public class Main_Home extends AppCompatActivity
                 break;
             case R.id.nav_about_us:
                 fragment = new About_Us();
+                viewIsAtHome = true;
+                title = "About Us";
+                break;
+            case R.id.nav_schedule:
+                fragment = new Schedule();
                 viewIsAtHome = true;
                 title = "About Us";
                 break;
