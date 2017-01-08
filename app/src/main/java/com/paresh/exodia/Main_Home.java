@@ -22,6 +22,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -75,9 +78,41 @@ public class Main_Home extends AppCompatActivity
 
         floatingButton();
         NotificationFirebase();
+        animate2();
         //ViewPager and TabLayout
 
     }
+    private void animate2() {
+        materialDesignFAM.clearAnimation();
+        TranslateAnimation transAnim = new TranslateAnimation(0,0,-2000,0);
+        transAnim.setStartOffset(0);
+        transAnim.setDuration(2500);
+        transAnim.setFillAfter(true);
+        transAnim.setInterpolator(new BounceInterpolator());
+        transAnim.setAnimationListener(new Animation.AnimationListener() {
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+
+            }
+        });
+        materialDesignFAM.startAnimation(transAnim);
+    }
+
+
+
 
     private void floatingButton() {
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
@@ -298,7 +333,7 @@ public class Main_Home extends AppCompatActivity
             startActivity(new Intent(Main_Home.this, Map_activity.class));
             return true;
         } else if (id == R.id.nav_app_credits) {
-
+            displayView(R.id.nav_app_credits);
         } else if (id == R.id.nav_contact_us) {
             displayView(R.id.nav_contact_us);
         } else if (id == R.id.nav_sponsors) {
@@ -351,6 +386,11 @@ public class Main_Home extends AppCompatActivity
                 break;
             case R.id.nav_schedule:
                 fragment = new Schedule();
+                viewIsAtHome = true;
+                title = "About Us";
+                break;
+            case R.id.nav_app_credits:
+                fragment = new AppCredits();
                 viewIsAtHome = true;
                 title = "About Us";
                 break;
