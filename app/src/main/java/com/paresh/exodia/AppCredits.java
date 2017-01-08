@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Schedule_Day2 extends Fragment {
+public class AppCredits extends Fragment {
 
 
-    public Schedule_Day2() {
+    public AppCredits() {
         // Required empty public constructor
     }
 
@@ -23,7 +23,7 @@ public class Schedule_Day2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule__day2, container, false);
+        return inflater.inflate(R.layout.fragment_app_credits, container, false);
     }
 
 }

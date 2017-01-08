@@ -2,17 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.paresh.exodia.Schedule_Package.Schedule_Day3"
-    android:background="@color/grey">
+    tools:context="com.paresh.exodia.AppCredits">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Day3"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

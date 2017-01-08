@@ -1,4 +1,4 @@
-package com.paresh.exodia;
+package com.paresh.exodia.Schedule_Package;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.paresh.exodia.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Schedule_Day1 extends Fragment {
+public class Schedule_Day3 extends Fragment {
 
 
-    public Schedule_Day1() {
+    public Schedule_Day3() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class Schedule_Day1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule__day1, container, false);
+        return inflater.inflate(R.layout.fragment_schedule__day3, container, false);
     }
 
 }

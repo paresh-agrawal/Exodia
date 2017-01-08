@@ -2,17 +2,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.paresh.exodia.Schedule_Day2"
+    android:layout_margin="8dp"
+    tools:context="com.paresh.exodia.Schedule_Package.Schedule_Day2"
     android:background="@color/grey">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Day2"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/fragment_schedule__day2"
+        tools:context=".Main_Home">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_day2"
+            android:background="#eee"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
 
 </FrameLayout>
