@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.webkit.WebView;
@@ -58,38 +59,15 @@ public class Home extends Fragment {
         floatingActionButton5 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_twitter);
 
 
-        animate2();
+        animate();
         return home;
         //ViewPager and TabLayout
 
     }
-    private void animate2() {
-        materialDesignFAM.clearAnimation();
-        TranslateAnimation transAnim = new TranslateAnimation(0,0,-2000,0);
-        transAnim.setStartOffset(0);
-        transAnim.setDuration(2500);
-        transAnim.setFillAfter(true);
-        transAnim.setInterpolator(new BounceInterpolator());
-        transAnim.setAnimationListener(new Animation.AnimationListener() {
+    private void animate() {
+        Animation pop_out = AnimationUtils.loadAnimation(getActivity(),R.anim.pop_out);
 
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-
-            }
-        });
-        materialDesignFAM.startAnimation(transAnim);
+        materialDesignFAM.setAnimation(pop_out);
     }
 
     private void floatingButton() {

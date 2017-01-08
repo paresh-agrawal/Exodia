@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
@@ -78,37 +79,14 @@ public class Main_Home extends AppCompatActivity
 
         floatingButton();
         NotificationFirebase();
-        animate2();
+        animate();
         //ViewPager and TabLayout
 
     }
-    private void animate2() {
-        materialDesignFAM.clearAnimation();
-        TranslateAnimation transAnim = new TranslateAnimation(0,0,-2000,0);
-        transAnim.setStartOffset(0);
-        transAnim.setDuration(2500);
-        transAnim.setFillAfter(true);
-        transAnim.setInterpolator(new BounceInterpolator());
-        transAnim.setAnimationListener(new Animation.AnimationListener() {
+    private void animate() {
+        Animation pop_out = AnimationUtils.loadAnimation(this,R.anim.pop_out);
 
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-
-            }
-        });
-        materialDesignFAM.startAnimation(transAnim);
+        materialDesignFAM.setAnimation(pop_out);
     }
 
 

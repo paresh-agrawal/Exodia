@@ -51,7 +51,7 @@ public class Contact_Us extends Fragment {
         // Inflate the layout for this fragment
         View contact_us = inflater.inflate(R.layout.fragment_contact_us, container, false);
         ((Main_Home) getActivity())
-                .setActionBarTitle("Contact Us");
+                .setActionBarTitle("Our Team");
 
         cardView_kislaya = (CardView) contact_us.findViewById(R.id.cardview_kislaya);
         cardView_aditya = (CardView) contact_us.findViewById(R.id.cardview_aditya);
@@ -73,7 +73,6 @@ public class Contact_Us extends Fragment {
 
     private void animation() {
         Animation pop_out1 = AnimationUtils.loadAnimation(getActivity(), R.anim.pop_out_1);
-
         cardView_kislaya.setAnimation(pop_out1);
         cardView_aditya.setAnimation(pop_out1);
         cardView_abhishek.setAnimation(pop_out1);
