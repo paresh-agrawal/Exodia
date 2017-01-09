@@ -54,8 +54,6 @@ public class Fashion_Events extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View fashion_events = inflater.inflate(R.layout.fragment_fashion__events, container, false);
-        ((Main_Home) getActivity())
-                .setActionBarTitle("Cultural Events");
         coutureib = (ImageButton)fashion_events.findViewById(R.id.event_fashion_couture);
         mrMrsExodia =(ImageButton)fashion_events.findViewById(R.id.event_fashion_MrMrsExodia);
 
@@ -94,37 +92,6 @@ public class Fashion_Events extends Fragment {
 
         coutureib.setAnimation(pop_out);
         mrMrsExodia.setAnimation(pop_out_1);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if(getView() == null){
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    Fragment fragment = new Events();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame,fragment);
-                    ft.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
     @Override
     public void onDestroy() {

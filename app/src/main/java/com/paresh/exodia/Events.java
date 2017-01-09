@@ -2,12 +2,14 @@ package com.paresh.exodia;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +20,12 @@ import android.widget.ImageButton;
 
 import com.paresh.exodia.EventsType.Cultural_Events;
 import com.paresh.exodia.EventsType.Fashion_Events;
-import com.paresh.exodia.EventsType.TechnicalEvents;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Events extends Fragment {
-
 
     private ImageButton cultiv,fashioniv,techiv;
 
@@ -57,7 +57,7 @@ public class Events extends Fragment {
         fashioniv = (ImageButton)events.findViewById(R.id.event_fashib);
 
         animation();
-        openEvents();
+        sendInt();
         return events;
     }
 
@@ -71,34 +71,36 @@ public class Events extends Fragment {
         fashioniv.setAnimation(pop_out_2);
     }
 
-    private void openEvents() {
+    private void sendInt() {
         techiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new TechnicalEvents();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(0);
+                openEventTab();
             }
         });
         cultiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Cultural_Events();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(1);
+                openEventTab();
             }
         });
         fashioniv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Fashion_Events();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(2);
+                openEventTab();
             }
         });
+
+    }
+
+    private void openEventTab() {
+        Fragment fragment = new EventTabs();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame,fragment);
+        ft.commit();
     }
 
     //onBackKeyPress

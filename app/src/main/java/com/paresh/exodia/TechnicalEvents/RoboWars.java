@@ -49,8 +49,6 @@ public class RoboWars extends Fragment {
         // Inflate the layout for this fragment
         final View roboWars = inflater.inflate(R.layout.fragment_robo_wars, container, false);
 
-        ((Main_Home) getActivity()).setActionBarTitle("Robowars");
-
         schedule = (CardView)roboWars.findViewById(R.id.schedule);
         prize = (CardView)roboWars.findViewById(R.id.prize);
         description = (CardView)roboWars.findViewById(R.id.description);
@@ -115,35 +113,4 @@ public class RoboWars extends Fragment {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if (getView() == null) {
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                    Fragment fragment = new TechnicalEvents();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame, fragment);
-                    ft.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
-
-    }
 }

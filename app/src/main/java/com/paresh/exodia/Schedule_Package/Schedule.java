@@ -58,7 +58,7 @@ public class Schedule extends Fragment implements TabLayout.OnTabSelectedListene
 
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
-
+        tabLayout.setupWithViewPager(viewPager);
         //Adding onTabSelectedListener to swipe views
         tabLayout.setOnTabSelectedListener(this);
         return schedule;
@@ -70,7 +70,7 @@ public class Schedule extends Fragment implements TabLayout.OnTabSelectedListene
 
     @Override
     public void onTabUnselected(TabLayout.Tab tab) {
-
+        viewPager.getCurrentItem();
     }
 
     @Override

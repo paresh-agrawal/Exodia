@@ -42,8 +42,7 @@
                 android:id="@+id/item_linear_layout_kislaya"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:orientation="horizontal"
-                android:background="@drawable/rounded_rect">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/ivTeamMemberPic_kislaya"

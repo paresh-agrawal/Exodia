@@ -53,8 +53,6 @@ public class Cultural_Events extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View cult_events = inflater.inflate(R.layout.fragment_cultural__events, container, false);
-        ((Main_Home) getActivity())
-                .setActionBarTitle("Cultural Events");
         canvasib = (ImageButton) cult_events.findViewById(R.id.event_cult_canvas);
         bStinkib = (ImageButton) cult_events.findViewById(R.id.event_cult_bigStink);
         eIdolib = (ImageButton) cult_events.findViewById(R.id.event_cult_exodiaIdol);
@@ -139,37 +137,6 @@ public class Cultural_Events extends Fragment {
         syncib.setAnimation(pop_out_3);
         gFanaticsib.setAnimation(pop_out_4);
         bSlamib.setAnimation(pop_out_5);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if(getView() == null){
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    Fragment fragment = new Events();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame,fragment);
-                    ft.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
     @Override
     public void onDestroy() {

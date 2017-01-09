@@ -19,12 +19,7 @@ import android.widget.ImageButton;
 import com.paresh.exodia.Events;
 import com.paresh.exodia.Main_Home;
 import com.paresh.exodia.R;
-import com.paresh.exodia.TechnicalEvents.Iot;
-import com.paresh.exodia.TechnicalEvents.JunkyardWars;
-import com.paresh.exodia.TechnicalEvents.LaserTag;
-import com.paresh.exodia.TechnicalEvents.LineFollower;
-import com.paresh.exodia.TechnicalEvents.Nirman;
-import com.paresh.exodia.TechnicalEvents.RoboWars;
+import com.paresh.exodia.TechnicalEventsTabs;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,8 +49,6 @@ public class TechnicalEvents extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View tech_events = inflater.inflate(R.layout.fragment_technical_events, container, false);
-        ((Main_Home) getActivity())
-                .setActionBarTitle("Technical Events");
         lineFollowerib = (ImageButton) tech_events.findViewById(R.id.event_tech_lineFollower);
         iotib = (ImageButton) tech_events.findViewById(R.id.event_tech_iot);
         roboWarsib = (ImageButton) tech_events.findViewById(R.id.event_tech_roboWars);
@@ -64,66 +57,60 @@ public class TechnicalEvents extends Fragment {
         nirmanib = (ImageButton) tech_events.findViewById(R.id.event_tech_nirman);
 
         animation();
-        open_events();
+        setInt();
 
         return tech_events;
     }
 
-    private void open_events() {
+    private void setInt() {
         lineFollowerib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new LineFollower();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(0);
+                openEventTab();
             }
         });
         iotib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Iot();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(1);
+                openEventTab();
             }
         });
         roboWarsib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new RoboWars();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(2);
+                openEventTab();
             }
         });
         junkyardWarsib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new JunkyardWars();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(3);
+                openEventTab();
             }
         });
         laserTagib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new LaserTag();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(4);
+                openEventTab();
             }
         });
         nirmanib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Nirman();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame,fragment);
-                ft.commit();
+                ((Main_Home)getActivity()).setInt(5);
+                openEventTab();
             }
         });
+    }
+    private void openEventTab() {
+        Fragment fragment = new TechnicalEventsTabs();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame,fragment);
+        ft.commit();
     }
 
     private void animation() {
@@ -140,37 +127,6 @@ public class TechnicalEvents extends Fragment {
         junkyardWarsib.setAnimation(pop_out_3);
         laserTagib.setAnimation(pop_out_4);
         nirmanib.setAnimation(pop_out_5);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if(getView() == null){
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    Fragment fragment = new Events();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame,fragment);
-                    ft.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
     }
     @Override
     public void onDestroy() {

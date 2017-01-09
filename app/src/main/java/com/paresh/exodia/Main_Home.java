@@ -1,13 +1,9 @@
 package com.paresh.exodia;
 
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
@@ -15,21 +11,14 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
-
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.paresh.exodia.Schedule_Package.Schedule;
@@ -37,20 +26,13 @@ import com.paresh.exodia.Schedule_Package.Schedule;
 public class Main_Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private NavigationView navigationView;
     private boolean viewIsAtHome;
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     private long mBackPressed;
-    private Firebase myFirebaseRef;
-    public static String val;
-    private NotificationCompat.Builder mBuilder, mBuilder1;
-    private String NotificationString;
     public DrawerLayout drawer;
-    public TabLayout tabLayout;
-    private int a;
     FloatingActionMenu materialDesignFAM;
     FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4, floatingActionButton5;
-    public AlphaAnimation fadeIn;
+    public int b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +60,13 @@ public class Main_Home extends AppCompatActivity
 
 
         floatingButton();
-        NotificationFirebase();
         animate();
-        //ViewPager and TabLayout
-
     }
     private void animate() {
         Animation pop_out = AnimationUtils.loadAnimation(this,R.anim.pop_out);
 
         materialDesignFAM.setAnimation(pop_out);
     }
-
-
-
 
     private void floatingButton() {
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
@@ -133,102 +109,6 @@ public class Main_Home extends AppCompatActivity
                 startActivity(intent);
             }
         });
-    }
-
-    public void NotificationFirebase() {
-        int color = getResources().getColor(R.color.colorPrimary);
-        mBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                //.setLargeIcon(largeIcon)
-                .setSmallIcon(R.drawable.ic_notification_icon)
-                .setColor(color)
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        mBuilder1 = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                //.setLargeIcon(largeIcon)
-                .setSmallIcon(R.drawable.ic_notification_icon)
-                .setColor(color)
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        getNotification();
-    }
-
-    private void getNotification() {
-        //Notification 1
-        myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Value");
-        myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
-            @Override
-            public void onDataChange(com.firebase.client.DataSnapshot data) {
-
-                System.out.println(data.getValue());
-                val = (String) data.getValue();
-                Log.d("def", val);
-                if (val.equals("yes1")) {
-                    myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag/NotificationDetail");
-                    myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
-                        @Override
-                        public void onDataChange(com.firebase.client.DataSnapshot notification) {
-                            System.out.println(notification.getValue());
-                            mBuilder.setContentText((String) notification.getValue());
-                        }
-
-                        @Override
-                        public void onCancelled(FirebaseError firebaseError) {
-                        }
-                    });
-                    myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag/NotificationTitle");
-                    myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
-                        @Override
-                        public void onDataChange(com.firebase.client.DataSnapshot notification) {
-                            System.out.println(notification.getValue());
-                            mBuilder.setContentTitle((String) notification.getValue());
-                        }
-
-                        @Override
-                        public void onCancelled(FirebaseError firebaseError) {
-                        }
-                    });
-                    buildNotification(1);
-                } else if (val.equals("yes2")) {
-                    myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag1/NotificationDetail");
-                    myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
-                        @Override
-                        public void onDataChange(com.firebase.client.DataSnapshot notification) {
-                            System.out.println(notification.getValue());
-                            mBuilder1.setContentText((String) notification.getValue());
-                        }
-
-                        @Override
-                        public void onCancelled(FirebaseError firebaseError) {
-                        }
-                    });
-                    myFirebaseRef = new Firebase("https://exodia-1002f.firebaseio.com/Flag1/NotificationTitle");
-                    myFirebaseRef.addValueEventListener(new com.firebase.client.ValueEventListener() {
-                        @Override
-                        public void onDataChange(com.firebase.client.DataSnapshot notification) {
-                            System.out.println(notification.getValue());
-                            mBuilder1.setContentTitle((String) notification.getValue());
-                        }
-
-                        @Override
-                        public void onCancelled(FirebaseError firebaseError) {
-                        }
-                    });
-                    buildNotification(2);
-                }
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-            }
-        });
-    }
-
-    private void buildNotification(int i) {
-        if (i == 1) {
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(1, mBuilder.build());
-        } else if (i == 2) {
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(1, mBuilder1.build());
-        }
     }
 
     @Override
@@ -319,7 +199,7 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_about_us) {
             displayView(R.id.nav_about_us);
         } else if (id == R.id.nav_share) {
-
+            displayView(R.id.nav_share);
         } else if (id == R.id.nav_send) {
 
         }
@@ -372,6 +252,11 @@ public class Main_Home extends AppCompatActivity
                 viewIsAtHome = true;
                 title = "About Us";
                 break;
+            case R.id.nav_share:
+                fragment = new EventTabs();
+                viewIsAtHome = true;
+                title = "About Us";
+                break;
         }
 
         if (fragment != null) {
@@ -392,6 +277,10 @@ public class Main_Home extends AppCompatActivity
 
     public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
+    }
+
+    public void setInt(int a){
+        b=a;
     }
 }
 

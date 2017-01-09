@@ -49,7 +49,6 @@ public class Iot extends Fragment {
         // Inflate the layout for this fragment
         final View iot = inflater.inflate(R.layout.fragment_iot, container, false);
 
-        ((Main_Home) getActivity()).setActionBarTitle("Internet of Things");
 
         schedule = (CardView)iot.findViewById(R.id.schedule);
         prize = (CardView)iot.findViewById(R.id.prize);
@@ -115,35 +114,4 @@ public class Iot extends Fragment {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if (getView() == null) {
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                DrawerLayout drawer = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-                if (drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.closeDrawer(GravityCompat.START);
-                    return true;
-                }
-                else if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                    Fragment fragment = new TechnicalEvents();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame, fragment);
-                    ft.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
-
-    }
 }

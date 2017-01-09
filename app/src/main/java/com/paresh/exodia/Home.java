@@ -58,8 +58,8 @@ public class Home extends Fragment {
         floatingActionButton4 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_googlePlus);
         floatingActionButton5 = (FloatingActionButton) home.findViewById(R.id.material_design_floating_action_menu_twitter);
 
-
         animate();
+        floatingButton();
         return home;
         //ViewPager and TabLayout
 
