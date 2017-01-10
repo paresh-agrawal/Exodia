@@ -3,6 +3,8 @@ package com.paresh.exodia;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,6 +20,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.paresh.exodia.EventsType.Cultural_Events;
@@ -59,6 +62,14 @@ public class EventTabs extends Fragment {
         viewPager = (ViewPager)EventTabs.findViewById(R.id.viewpager);
         //viewPager.setAdapter(new Pager(getActivity().getSupportFragmentManager(),tabLayout.getTabCount()));
         tabLayout= (TabLayout)EventTabs.findViewById(R.id.tablayout);
+
+        LinearLayout linearLayout = (LinearLayout)tabLayout.getChildAt(0);
+        linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setColor(Color.GRAY);
+        drawable.setSize(1, 1);
+        linearLayout.setDividerPadding(30);
+        linearLayout.setDividerDrawable(drawable);
 
         //Adding the tabs using addTab() method
         tabLayout.addTab(tabLayout.newTab());
