@@ -26,8 +26,8 @@ import android.widget.TextView;
  */
 public class Contact_Us extends Fragment {
 
-    private CardView cardView_kislaya,cardView_aditya,cardView_abhishek,cardView_atul,cardView_mukesh,cardView_anuksha,cardView_rahul,cardView_pulkit;
-    private TextView textView_convenor,textView_spon,textView_publicity,textView_media;
+    private CardView cardView_kislaya,cardView_aditya,cardView_abhishek,cardView_atul,cardView_mukesh,cardView_anuksha,cardView_rahul,cardView_pulkit,cardView_rahulSingh,cardView_mohit,cardView_aakash,cardView_himanshu,cardView_aman,cardView_mayuresh,cardView_dheeraj,cardView_akshit,cardView_pankaj;
+    private TextView textView_convenor,textView_spon,textView_publicity,textView_media,textView_desingers,textView_planning,textView_finance,textView_hospitality,textView_control;
 
     public Contact_Us() {
         // Required empty public constructor
@@ -61,10 +61,24 @@ public class Contact_Us extends Fragment {
         cardView_anuksha = (CardView) contact_us.findViewById(R.id.cardview_anuksha);
         cardView_rahul = (CardView) contact_us.findViewById(R.id.cardview_rahul);
         cardView_pulkit = (CardView) contact_us.findViewById(R.id.cardview_pulkit);
+        cardView_rahulSingh = (CardView) contact_us.findViewById(R.id.cardview_rahulSingh);
+        cardView_mohit = (CardView) contact_us.findViewById(R.id.cardview_mohit);
+        cardView_aakash = (CardView) contact_us.findViewById(R.id.cardview_aakash);
+        cardView_himanshu = (CardView) contact_us.findViewById(R.id.cardview_himanshu);
+        cardView_aman = (CardView) contact_us.findViewById(R.id.cardview_aman);
+        cardView_mayuresh = (CardView) contact_us.findViewById(R.id.cardview_mayuresh);
+        cardView_dheeraj = (CardView) contact_us.findViewById(R.id.cardview_dheeraj);
+        cardView_akshit = (CardView) contact_us.findViewById(R.id.cardview_akshit);
+        cardView_pankaj = (CardView) contact_us.findViewById(R.id.cardview_pankaj);
         textView_convenor = (TextView)contact_us.findViewById(R.id.tv_convenor);
         textView_spon = (TextView)contact_us.findViewById(R.id.tv_spon);
         textView_publicity = (TextView)contact_us.findViewById(R.id.tv_publicity);
         textView_media = (TextView)contact_us.findViewById(R.id.tv_media);
+        textView_desingers = (TextView)contact_us.findViewById(R.id.tv_designers);
+        textView_planning = (TextView)contact_us.findViewById(R.id.tv_planning);
+        textView_finance = (TextView)contact_us.findViewById(R.id.tv_finance);
+        textView_hospitality = (TextView)contact_us.findViewById(R.id.tv_hospitality);
+        textView_control = (TextView)contact_us.findViewById(R.id.tv_control);
 
         animation();
         call();
@@ -81,10 +95,24 @@ public class Contact_Us extends Fragment {
         cardView_anuksha.setAnimation(pop_out1);
         cardView_rahul.setAnimation(pop_out1);
         cardView_pulkit.setAnimation(pop_out1);
+        cardView_pankaj.setAnimation(pop_out1);
+        cardView_akshit.setAnimation(pop_out1);
+        cardView_dheeraj.setAnimation(pop_out1);
+        cardView_mayuresh.setAnimation(pop_out1);
+        cardView_aman.setAnimation(pop_out1);
+        cardView_himanshu.setAnimation(pop_out1);
+        cardView_aakash.setAnimation(pop_out1);
+        cardView_mohit.setAnimation(pop_out1);
+        cardView_rahulSingh.setAnimation(pop_out1);
         textView_convenor.setAnimation(pop_out1);
         textView_spon.setAnimation(pop_out1);
         textView_publicity.setAnimation(pop_out1);
         textView_media.setAnimation(pop_out1);
+        textView_desingers.setAnimation(pop_out1);
+        textView_planning.setAnimation(pop_out1);
+        textView_finance.setAnimation(pop_out1);
+        textView_hospitality.setAnimation(pop_out1);
+        textView_control.setAnimation(pop_out1);
     }
 
     private void call() {
@@ -134,6 +162,60 @@ public class Contact_Us extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919882650863")));
+            }
+        });
+        cardView_rahulSingh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918504023766")));
+            }
+        });
+        cardView_mohit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015362")));
+            }
+        });
+        cardView_aakash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:-")));
+            }
+        });
+        cardView_himanshu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919736260510")));
+            }
+        });
+        cardView_aman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015159")));
+            }
+        });
+        cardView_mayuresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919459086596")));
+            }
+        });
+        cardView_dheeraj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917827807695")));
+            }
+        });
+        cardView_akshit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917807153087")));
+            }
+        });
+        cardView_pankaj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917807054950")));
             }
         });
 

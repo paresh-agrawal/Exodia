@@ -592,6 +592,662 @@
             </RelativeLayout>
             </android.support.v7.widget.CardView>
 
+            //designers
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/designers"
+                android:id="@+id/tv_designers"
+                android:textColor="#ddd"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //RahulSingh
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_rahulSingh"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_rahulSingh"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_rahulSingh"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/rahul_singh" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_rahulSingh"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_rahulSingh"
+                            android:text="Rahul Singh"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_rahul"
+                            android:text="rahul_singh@students.iitmandi.ac.in"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_rahulSingh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            //Mohit
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_mohit"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_mohit"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_mohit"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mohit" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_mohit"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_mohit"
+                            android:text="Mohit Sharma"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_mohit"
+                            android:text="mohit_sharma@students.iitmandi.ac.in"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_mohit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            //planning
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/planning"
+                android:id="@+id/tv_planning"
+                android:textColor="#ddd"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //Aakash Dagar
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_aakash"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_aakash"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_aakash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/aakash" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_aakash"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_rahulSingh"
+                            android:text="Aakash Dagar"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_aakash"
+                            android:text="-"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_aakash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            //Himanshu
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_himanshu"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_himanshu"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_himanshu"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/himanshu" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="Himanshu Kumar"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="himanshu_kumar@students.iitmandi.ac.in"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_himanshu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            //Finance
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finance"
+                android:id="@+id/tv_finance"
+                android:textColor="#ddd"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //Aman
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_aman"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_aman"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_aman"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/aman" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_aman"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_aman"
+                            android:text="Aman Singh"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_aman"
+                            android:text="aman_singh@students.iitmandi.ac.in"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_aman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            //hospitality
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hospitality"
+                android:id="@+id/tv_hospitality"
+                android:textColor="#ddd"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //Mayuresh
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_mayuresh"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_mayuresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_mayuresh"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mayuresh" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_mayuresh"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_rahulSingh"
+                            android:text="Mayuresh Gupta"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_aakash"
+                            android:text="mayureshg14@gmail.com"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_mayuresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            //Dheeraj
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_dheeraj"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_dheeraj"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_dheeraj"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/dheeraj" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_dheeraj"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="Dheeraj Meena"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="dheerajmeena40@gmail.com"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_dheeraj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            //Control and discipline
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/control"
+                android:id="@+id/tv_control"
+                android:textColor="#ddd"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //Akshit
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_akshit"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="1dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_akshit"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_akshit"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/akshit" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_akshit"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_rahulSingh"
+                            android:text="Akshit Kaushik"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_aakash"
+                            android:text="akshitkaushik3047@gmail.com"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_akshit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            //Pankaj
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:id="@+id/cardview_pankaj"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp">
+                <RelativeLayout
+                    android:id="@+id/item_linear_layout_pankaj"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_rect">
+
+                    <ImageView
+                        android:id="@+id/ivTeamMemberPic_pankaj"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/pankaj" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_pankaj"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberName16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="Pankaj Sheoran"
+                            android:textColor="#07040c"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTeamMemberEmail16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTeamMemberName3"
+                            android:layout_toRightOf="@id/ivTeamMemberPic_himanshu"
+                            android:text="pankaj_s@students.iitmandi.ac.in"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_call_image_pankaj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="18dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_call_black_18dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
         </LinearLayout>
     </ScrollView>
 

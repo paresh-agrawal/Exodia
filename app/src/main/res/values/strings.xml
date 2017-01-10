@@ -11,14 +11,15 @@
     <string name="map_type_terrain">Terrain</string>
     <string name="map_type_satellite">Satellite</string>
     <string name="map_type_hybrid">Hybrid</string>
-    <string name="campus_map"><b>       Campus Map</b></string>
-    <string name="contact_us"><b>       Contact Us</b></string>
-    <string name="sponsors"><b>       Sponsors</b></string>
-    <string name="events"><b>       Events</b></string>
     <string name="conveyor"><u><b>The Convener</b></u></string>
     <string name="spon"><u><b>Sponsorship Coordinators</b></u></string>
     <string name="pub"><u><b>Publicity Coordinators</b></u></string>
     <string name="media"><u><b>Media Coordinators</b></u></string>
+    <string name="designers"><u><b>Designers</b></u></string>
+    <string name="planning"><u><b>Planning Coordinators</b></u></string>
+    <string name="finance"><u><b>Finance Head</b></u></string>
+    <string name="hospitality"><u><b>Hospitality Coordinators</b></u></string>
+    <string name="control"><u><b>Control and Discipline Coordinators</b></u></string>
 
 
     //Events Call No.
