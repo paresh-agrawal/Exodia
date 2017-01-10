@@ -199,7 +199,7 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_about_us) {
             displayView(R.id.nav_about_us);
         } else if (id == R.id.nav_share) {
-            displayView(R.id.nav_share);
+
         } else if (id == R.id.nav_send) {
 
         }

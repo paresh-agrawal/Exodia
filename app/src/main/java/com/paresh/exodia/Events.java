@@ -79,7 +79,7 @@ public class Events extends Fragment {
                 openEventTab();
             }
         });
-        cultiv.setOnClickListener(new View.OnClickListener() {
+        /*cultiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((Main_Home)getActivity()).setInt(1);
@@ -92,7 +92,7 @@ public class Events extends Fragment {
                 ((Main_Home)getActivity()).setInt(2);
                 openEventTab();
             }
-        });
+        });*/
 
     }
 
